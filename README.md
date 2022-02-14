@@ -122,7 +122,7 @@ doves-cli build
 
 #### doves-cli build
 
-```json
+```bash
 用法：def-cli build [options] [entry]
 
 选项：
