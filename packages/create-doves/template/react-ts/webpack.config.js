@@ -7,7 +7,7 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   cache: false,
   devtool: isDevelopment ? 'eval-cheap-module-source-map': false,
   output: {
