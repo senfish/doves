@@ -1,6 +1,6 @@
 # doves
 
-
+> react项目脚手架，问询式交互，提供多种模板，快速创建一个初始化项目
 ## 核心包
 
 `doves` 是由两个核心包 `doves-cli` 和 `create-doves` 组成。
