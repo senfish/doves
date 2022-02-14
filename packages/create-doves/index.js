@@ -35,6 +35,7 @@ const templates = [{
 
 async function init() {
   let projectDir = argv._[0]; // 支持npm init / yarn create方式创建项目
+  console.log('projectDir: ', projectDir);
 
   const defaultProjectName = !projectDir ? 'doves-project' : projectDir;
 
@@ -217,7 +218,7 @@ function isEmpty(path) {
 }
 
 function findNpm() {
-  var npms = process.platform === 'win32' ? ['cnpm.cmd', 'npm.cmd', 'pnpm.cmd', 'yarn.cmd',] : [ 'cnpm', 'npm', 'yarn', 'pnpm',];
+  var npms = process.platform === 'win32' ? ['pnpm.cmd', 'yarn.cmd', 'cnpm.cmd','npm.cmd'] : ['pnpm', 'yarn', 'cnpm', 'npm'];
   for (var i = 0; i < npms.length; i++) {
     try {
       which.sync(npms[i]);
