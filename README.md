@@ -23,14 +23,14 @@
 
 #### 通过包管理工具
 
+使用yarn(建议使用):
+```bash
+yarn create doves
+```
+
 使用npm:
 ```bash
 npm init doves@latest
-```
-
-使用yarn:
-```bash
-yarn create doves
 ```
 
 使用pnpm:
