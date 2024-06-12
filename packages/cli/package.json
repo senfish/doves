@@ -1,6 +1,6 @@
 {
   "name": "doves-cli",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "doves-cli",
   "author": "fengdq",
   "homepage": "",
@@ -24,13 +24,11 @@
   "dependencies": {
     "@babel/cli": "^7.17.0",
     "@babel/core": "^7.17.2",
-    "cac": "^6.7.12",
     "commander": "^9.0.0",
     "figlet": "1.5.2",
     "kolorist": "1.5.1",
     "ora": "5.0.0",
     "rimraf": "^3.0.2",
-    "rollup": "^2.67.2",
     "webpack": "^5.68.0",
     "webpack-dev-server": "^4.7.4"
   }

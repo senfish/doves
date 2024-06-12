@@ -32,23 +32,9 @@ async function build(program) {
         spinner.fail('Building Failed');
         // console.error(err.message)
         console.error(err.stack || err);
-
-        if (err.details) {
-          console.error(err.details);
-        }
-
         return;
     }
     const info = stats.toJson();
-
-    if (stats.hasErrors()) {
-      return console.error(info.errors);
-    }
-
-    if (stats.hasWarnings()) {
-      return retuconsole.warn(info.warnings);
-    }
-
     spinner.succeed(`webpack ${green(bold(info.version))} compiled ${green(bold('Successful!'))} in ${info.time} ms`)
     
     console.log('Build output: ' + green(info.outputPath));
