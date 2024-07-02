@@ -35,9 +35,7 @@ const templates = [{
 
 async function init() {
   let projectDir = argv._[0]; // 支持npm init / yarn create方式创建项目
-
   const defaultProjectName = !projectDir ? 'doves-project' : projectDir;
-
   let result = {};
 
   try {
@@ -144,20 +142,10 @@ async function init() {
 
   console.log(`\nDone. Now run:\n`)
 
-  process.chdir(root);
-  function printSuccess() {
-    console.log();
-    console.log(green(figlet.textSync('doves', {
-      horizontalLayout: 'full',
-    })))
-    console.log();
-    success(`
+  success(`
   cd ${root}
   npm start
     `)
-  }
-  await install(printSuccess);
-  console.log();
 }
 
 
@@ -216,50 +204,6 @@ function isEmpty(path) {
   return fs.readdirSync(path).length === 0
 }
 
-function findNpm() {
-  var npms = process.platform === 'win32' ? ['pnpm.cmd', 'yarn.cmd', 'cnpm.cmd','npm.cmd'] : ['pnpm', 'yarn', 'cnpm', 'npm'];
-  for (var i = 0; i < npms.length; i++) {
-    try {
-      which.sync(npms[i]);
-      console.log('use : ' + npms[i]);
-      console.log();
-      console.log(`${npms[i]} install`);
-      return npms[i];
-    } catch (e) {
-    }
-  }
-  throw new Error('please install npm');
-}
-
-function runCmd(cmd, args, fn) {
-  args = args || [];
-  var runner = require('child_process').spawn(cmd, args, {
-    stdio: "inherit"
-  });
-  runner.on('close', function (code) {
-    if (fn) {
-      fn(code);
-    }
-  });
-}
-// 添加依赖
-const npmInstallMap = {
-  'pnpm': 'install',
-  'cnpm': 'install',
-  'npm': 'install',
-  'tnpm': 'install',
-  'yarn': 'add',
-}
-function install (done) {
-  const npm = findNpm();
-  runCmd(which.sync('git'), ['init'], function () {
-    runCmd(which.sync(npm), ['install'], function () {
-      runCmd(which.sync(npm), [npmInstallMap[npm], 'doves-cli', '--save'], function () {
-        done && done();
-      });
-    });
-  });
-};
 init().catch(err => {
   console.log(err);
 }) 
