@@ -143,8 +143,8 @@ async function init() {
   console.log(`\nDone. Now run:\n`)
 
   success(`
-  cd ${root}
-  npm start
+  cd ${projectDir}
+  npm install
     `)
 }
 

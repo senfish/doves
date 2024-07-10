@@ -6,8 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production doves-cli build",
     "start": "cross-env NODE_ENV=development doves-cli serve",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -56,6 +55,7 @@
     "history": "^5.1.0",
     "webpack": "^5.43.0",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "doves-cli": "^1.0.3"
   }
 }
