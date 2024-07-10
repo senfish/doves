@@ -78,7 +78,7 @@ yarn global add doves-cli
 
 ```json
 {
-    "scripts": {
+  "scripts": {
     "start": "doves-cli serve",
     "build": "doves-cli build"
   }
